@@ -11,7 +11,7 @@ function App() {
   const handleSubmit = async (formData) => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:4000/business-data", formData);
+      const res = await axios.post("https://minibuisnessbackend.onrender.com/business-data", formData);
       setBusinessData({ ...formData, ...res.data });
     } catch (err) {
       console.error("Submission error:", err);
@@ -23,7 +23,7 @@ function App() {
   const handleRegenerate = async () => {
     const { name, location } = businessData;
     try {
-      const res = await axios.get("http://localhost:4000/regenerate-headline", {
+      const res = await axios.get("https://minibuisnessbackend.onrender.com/regenerate-headline", {
         params: { name, location },
       });
       setBusinessData({ ...businessData, headline: res.data.headline });
