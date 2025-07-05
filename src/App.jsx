@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="min-h-screen p-6 bg-gradient-to-b from-white to-blue-50 flex flex-col items-center">
       <h1 className="text-4xl font-bold text-blue-800 mb-6 text-center">
-        GrowthProAI Dashboard
+        Mini Business Dashboard
       </h1>
 
       <BusinessForm onSubmit={handleSubmit} />
