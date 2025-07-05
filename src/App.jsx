@@ -2,7 +2,6 @@ import { useState } from "react";
 import axios from "axios";
 import BusinessForm from "./components/BusinessForm";
 import ResultCard from "./components/ResultCard";
-import Spinner from "./components/Spinner";
 
 function App() {
   const [businessData, setBusinessData] = useState();
@@ -40,7 +39,11 @@ function App() {
 
       <BusinessForm onSubmit={handleSubmit} />
 
-      {loading && <Spinner />}
+      {loading && (
+        <div className="flex justify-center items-center min-h-[400px]">
+          <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+        </div>
+      )}
 
       {businessData && !loading && (
         <ResultCard data={businessData} onRegenerate={handleRegenerate} />
